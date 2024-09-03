@@ -12,6 +12,7 @@ jobs:
       uses: equinix-labs/metal-project-action@v0.14.1
       with:
         userToken: ${{ secrets.METAL_AUTH_TOKEN }}
+        organizationID: ${{ secrets.METAL_ORGANIZATION }}
     - name: Use the Project SSH Key outputs (display it)
       run: |
         echo $PROJECT_PRIVATE_SSH_KEY
