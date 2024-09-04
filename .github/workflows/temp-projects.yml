@@ -1,4 +1,4 @@
-name: 'metal-actions-example'
+name: 'temp-projects'
 
 on:
   workflow_dispatch:
