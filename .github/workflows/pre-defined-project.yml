@@ -1,0 +1,24 @@
+name: 'metal-actions-example'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  project:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create device in temporary project
+      uses: equinix-labs/metal-device-action@v0.2.1
+      continue-on-error: true
+      with:
+        metal_auth_token: ${{ secrets.METAL_PROJECT_TOKEN }}
+        metal_project_id: ${{ secrets.METAL_PROJECT_ID }}
+        metro: da
+        plan: m3.small.x86
+        os: ubuntu_22_04
+    #- name: Delete temporary project & device
+    #  uses: equinix-labs/metal-sweeper-action@v0.6.1
+    #  with:
+    #    authToken: ${{ secrets.METAL_AUTH_TOKEN }}
+    #    projectID: ${{ secrets.METAL_PROJECT_ID }}
+        
